@@ -7,16 +7,20 @@ import RestaurantSingle from "./pages/RestaurantSingle.vue";
 
 const routes = [
   { path: "/", component: Home },
-  { path: "/restaurant", component: RestaurantSingle },
+  {
+    name: "Restaurant",
+    path: "/restaurant/:name",
+    component: RestaurantSingle,
+  },
 ];
 
-const router = createRouter({
+const route = createRouter({
   history: createWebHashHistory(),
   routes,
 });
 
-const VueApp = createApp(App);
+const VueApp = createApp(App).use(route);
 
-VueApp.use(router);
+VueApp.use(route);
 
 VueApp.mount("#app");

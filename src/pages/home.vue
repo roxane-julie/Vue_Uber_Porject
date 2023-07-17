@@ -13,8 +13,8 @@
                         id=""
                         placeholder="De quoi avez vous envie ?">
                         <div class="search">
-                            <router-link to="/restaurant">
-                                <div v-for="(restaurant, i) in searh_restaurant" :key="i" class="container--restaurant--serach">
+                            <router-link v-for="(restaurant, i) in searh_restaurant" :key="i" :to="{name:'Restaurant', params: {name: restaurant.name}}">
+                                <div  class="container--restaurant--serach">
                                 <div class="wrapper--img">
                                     <img :src="restaurant.image" alt="" srcset="">
                                 </div>
